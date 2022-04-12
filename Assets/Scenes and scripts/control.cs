@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 
 public class control : MonoBehaviour
 {
-    public void NextScene()
+    public void MoveToScene(int sceneID)
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene(sceneID);
     }
 }

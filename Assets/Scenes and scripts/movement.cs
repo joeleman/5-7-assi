@@ -66,8 +66,7 @@ public class movement : MonoBehaviour
         {
             anim.SetBool("walking", false);
         }
-
-
+      
         if (moveDirection != 0)
         {
             if (moveDirection > 0 && !facingRight)
@@ -82,13 +81,26 @@ public class movement : MonoBehaviour
             }
         }
 
-      
+
+
+        
+
         if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
             r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
         }
 
-       
+
+
+        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
+        {
+            anim.SetBool("jump", true);
+        }
+        else
+        {
+            anim.SetBool("jump", false);
+        }
+
         if (mainCamera)
         {
             mainCamera.transform.position = new Vector3(cameraPos.x, cameraPos.y, cameraPos.z);
